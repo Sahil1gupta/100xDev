@@ -1,0 +1,26 @@
+#In this week we are studing middleware,ZOD,Global catch
+
+1)Any website have two checks-->1st)Authantication 2nd)Input validation
+
+2)app.use(express.json())
+    app.use() takes middleware as argument and call them after every routes....we dont need to explicitly pass the midleware as callback to every routes.
+    if we think that any we wrote should be call at every route then pass it within app.use(middleware) it we handle for you.
+
+    express.json() within app.use() ---so commonly it is use for post request. it is use to parse the body and .json() indicates that it will take input (which is coming from post request)  
+    in json format. 
+
+    now question arises that why dont  we require express.json() or app.use(express.json())
+    at the time of (req.headers.username,req.headers.password,req.query.kidenyid;) bcoz 
+    we are aware of what will be coming from get request while talking about body part which is 
+    coming via post request we don't know the format of data whether it is text,HTML,JSON or something else
+    so to be precise that we want only json data to be passed in body  and parse it in json that's why we are using express.json()
+
+
+Gloabl catch
+
+ZOD --> For Input validation just give it schema of your field
+
+Sunday
+
+postgresql://ej1905630411%40gmail.com:jsZuX1S3iVfy@ep-quiet-star-a1et2p31.ap-southeast-1.aws.neon.tech/test?sslmode=require 
+mongodb+srv://Sahilgupta123:Sahilgupta766@cluster0.wft8uwg.mongodb.net/
