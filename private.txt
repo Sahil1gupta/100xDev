@@ -1,0 +1,2 @@
+postgresql://ej1905630411%40gmail.com:jsZuX1S3iVfy@ep-quiet-star-a1et2p31.ap-southeast-1.aws.neon.tech/test?sslmode=require 
+mongodb+srv://Sahilgupta123:Sahilgupta766@cluster0.wft8uwg.mongodb.net/
