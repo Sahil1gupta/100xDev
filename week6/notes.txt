@@ -1,0 +1,41 @@
+keep state variable at nearest ancestors so that your all the component won't re-render only your ancestor component
+and its child get re-render--this is one way to minimize the re-rendering of components
+
+
+6.2
+side effects-pdf
+https://chat.openai.com/share/b204be39-7422-48c5-b4d9-8be47912f2c8 read last one for side effect understanding
+
+hooks
+useCallback()
+e.g
+let a=2
+let b=2
+a==b will give you true
+
+//now see this one carefully
+function sum(a,b){
+    return a+b;
+}
+
+function sum2(a,b){
+    return a+b
+}
+
+sum==sum2 will give you false 
+
+agar function hai koi ...re-rendering ke time vo same function vapas se Redefine hota hai .bhale se usme kuch change naa hua ho react ko lgta h always ki change hua hai
+react compares fynctions by reference in this case we use useCallback  --check equality by reference
+react compares integers,string by value in this case we useMemo
+
+
+
+week-3
+Very Impornant behaviour i noticed in useEffect jb apne ek hi component me 3 -4 useEffect hai aur vo koi
+API vagera call nahi kr rhe hai to phele return ke bad vala mount ho jayega fr apna useEffect JO  3-4 Banaye hai vo execute hone jayega jb vo apne andar ke
+ ke states ko update kr dega to mujhe kya lagega ki react us component ko 3-4 times re-render karega but
+ aisa nahi hota REACT Uska ek batche (bundle) bana ke sirf ek hi bar re-render krega component ko naaki 3-4 bar
+ agar async task h kuch useEffect ke andar to uske liye re-render hoga alag se
+
+
+useCallback- IS about not rendering a child component,if the function hasn't/doesn't need to change across renders

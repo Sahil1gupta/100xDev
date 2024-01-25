@@ -1,0 +1,43 @@
+<html>
+  <body>
+    <!-- Input field with onInput event and debouncing -->
+    <input id="textInput" type="text" onInput="debounce(handleInput, 500)()" placeholder="Type something...">
+
+    <!-- Display area for the debounced input value -->
+    <p id="displayText"></p>
+
+    <script>
+      // Debounce function to delay the execution of a function
+      function debounce(func, delay) {
+        let timeoutId;
+
+        return function() {
+          // Clear the previous timeout
+          clearTimeout(timeoutId);
+
+          // Set a new timeout
+          timeoutId = setTimeout(function() {
+            func.apply(this,arguments);//arguments is not required here
+          }, Number(delay));
+        };
+      }
+
+      // Function to handle the debounced onInput event
+      function handleInput() {
+        // Get the input field's value
+        const inputValue = document.getElementById("textInput").value;
+
+        // Display the input value in the paragraph
+        document.getElementById("displayText").innerText = "You typed: " + inputValue;
+
+        // Simulate sending a request (replace with actual AJAX call)
+        console.log("Request sent:", inputValue);
+      }
+
+      // Inline function to call debounce with handleInput
+    //   function debounceHandler() {
+    //     debounce(handleInput, 500)();
+    //   }
+    </script>
+  </body>
+</html>
