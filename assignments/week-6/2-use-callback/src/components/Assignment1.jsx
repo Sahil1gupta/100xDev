@@ -1,16 +1,18 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, memo } from "react";
 
 export function Assignment1() {
     const [count, setCount] = useState(0);
 
     const handleIncrement = useCallback(
-        () => setCount((prevCount) => prevCount + 1),
-        [count]
+        function(prevCount){
+            return setCount(prevCount+1)  
+        },[]
     );
-
+//upar usecallback me we can write only setCount(count+1) it will work but the catch is we need to pass the 'count' state as dependency
+//to get free from this we can create the function within useCallback aur ye function ke pass automatically preCount bolo ya Currentcount rehta hi hai jisko hum log access kr sakte h to count ko as a dependecy pass krne ki need nhi hai 
     const handleDecrement = useCallback(
         () => setCount((prevCount) => prevCount - 1),
-        [count]
+        []
     );
 
     return (
@@ -21,9 +23,10 @@ export function Assignment1() {
     );
 }
 
-const CounterButtons = ({ onIncrement, onDecrement }) => (
+// eslint-disable-next-line react/display-name
+const CounterButtons = memo(({ onIncrement, onDecrement }) => (
     <div>
         <button onClick={onIncrement}>Increment</button>
         <button onClick={onDecrement}>Decrement</button>
     </div>
-);
+));

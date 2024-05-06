@@ -13,7 +13,7 @@ export function Assignment1() {
     }, [])
 
     const handleDecrement = useCallback(() => {
-        setCount(count => {
+        setCount(count => {  // same as above
             return count - 1
         });
     }, []);

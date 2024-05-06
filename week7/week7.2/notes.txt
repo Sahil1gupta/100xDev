@@ -1,0 +1,10 @@
+context api steps
+create kro
+provider milega usko export kro explicitly ya fr direct use kro .provider krke ,component ko provider se wrap kr do.
+fr usme value pass kro.
+fr jis bhi component me use krna hai vaha useContext ke through access kr lo
+
+
+Why  recoil , maan lo apne pass 1>2>3>4 aise parent to child hai, jo state varible hai vo
+apne ko 3rd and 4th vale child me use krna hai using useContext but issue kya hai conext api me ki apn acces to kr lenge but rendering ke time apna 1 and 2 vale component bhi re-render honge jb ki usme humne state varible jo context ke through banaya hai vo use ya access nhi kr rhe to bhi aona 1st and 2nd component re-render ho rha hai 
+to resolve this issue we used Recoil.
